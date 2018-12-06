@@ -11,6 +11,6 @@ namespace HandlingEnumsInApi.Dtos
     {
         public int Id { get; set; }
         public string StreetName { get; set; }
-        public AddressType Type{ get; set; }
+        public AddressType AddressType{ get; set; }
     }
 }

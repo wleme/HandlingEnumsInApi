@@ -12,16 +12,16 @@ namespace HandlingEnumsInApi.Dtos
     {
         [Required]
         public string StreetName { get; set; }
-        public string Type { get; set; }
+        public string AddressType { get; set; }
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
-            if (!Enum.TryParse(Type,true,out AddressType result))
+            if (!Enum.TryParse(AddressType,true,out AddressType result))
             {
                 yield return new ValidationResult("Invalid address type", new[] { nameof(AddressType) });
             }
 
-            Type = result.ToString(); //normalize Type
+            AddressType = result.ToString(); //normalize Type
         }
     }
 }

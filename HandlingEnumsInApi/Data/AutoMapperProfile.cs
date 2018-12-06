@@ -14,7 +14,7 @@ namespace HandlingEnumsInApi.Data
         public AutoMapperProfile()
         {
             CreateMap<AddressDto, Address>()
-                .ForMember(o => o.Type, ex => ex.MapFrom(o => Enum.Parse(typeof(AddressType), o.Type))); //maps from string to enum
+                .ForMember(o => o.AddressType, ex => ex.MapFrom(o => Enum.Parse(typeof(AddressType), o.AddressType))); //maps from string to enum
 
             CreateMap<Address, AddressResponseDto>();
         }
