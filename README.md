@@ -1,4 +1,4 @@
-This project shows how to handle enums in .net core APIs.(space,space)
+This project shows how to handle enums in .net core APIs.(space, space)
 
 0. First, let's create a new enum
 ``` csharp
@@ -42,3 +42,5 @@ The custom validator tries to convert the string supplied to a valid enum. It al
                 if (!ModelState.IsValid) return BadRequest(ModelState);
 ```
 The controller also converts 
+0. First item.
+d
