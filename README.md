@@ -51,6 +51,7 @@ adds the model and converts the model to a response dto.
                 if (!ModelState.IsValid) return BadRequest(ModelState);
                 var model = _mapper.Map<AddressDto, Address>(addressDto);
                 await _addressRepo.AddAsync(model);
+                await _addressRepo.SaveAll();
                 var output = _mapper.Map<Address, AddressResponseDto>(model);
                 return Created($"/api/addresses/{model.Id}", output);
 
