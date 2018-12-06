@@ -33,7 +33,7 @@ namespace HandlingEnumsInApi.Data.Entities.Repositories
             return Task.FromResult<Address>(_addresses.Where(x => x.Id == addressId).FirstOrDefault());
         }
 
-        public Task SaveAll()
+        public Task SaveAllAsync()
         {
             return Task.CompletedTask;
         }

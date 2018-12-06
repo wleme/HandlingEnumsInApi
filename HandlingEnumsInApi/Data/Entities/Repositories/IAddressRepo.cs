@@ -11,6 +11,6 @@ namespace HandlingEnumsInApi.Data.Entities.Repositories
         Task<ICollection<Address>> GetAsync();
         Task AddAsync(Address model);
         Task<Address> GetAsync(int addressId);
-        Task SaveAll();
+        Task SaveAllAsync();
     }
 }
