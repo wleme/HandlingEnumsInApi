@@ -1,7 +1,7 @@
 This project shows how to handle enums in .net core APIs.(space, space)
 
-0. First, let's create a new enum
-``` csharp
+- First, let's create a new enum
+``` csharp {.line-numbers}
     public enum AddressType: int
     {
         Home = 10,
@@ -10,10 +10,10 @@ This project shows how to handle enums in .net core APIs.(space, space)
 ```
 You don't want to make your api consumers understand your enums. They should send Home or Office instead of 10 or 20.
 
-0. Create a new dto that will receive the data in your post method and add a custom validator that will make sure the string supplied is valid.
+- Create a new dto that will receive the data in your post method and add a custom validator that will make sure the string supplied is valid.
 The custom validator tries to convert the string supplied to a valid enum. It also re-sets the string to the string representation of the enum. Ie. if you send up "hOme", the string will be converted to "Home"
 
-``` csharp
+``` csharp {.line-numbers}
     public class AddressDto : IValidatableObject
     {
         [Required]
@@ -32,8 +32,9 @@ The custom validator tries to convert the string supplied to a valid enum. It al
     }
 ```
 
-0. In the controller you need to validate the model which will be invalid if they send up an invalid type.
-``` csharp
+- In the controller you need to validate the model which will be invalid if they send up something different than home or office.
+It 
+``` csharp {.line-numbers}
         [HttpPost]
         public async Task<IActionResult> Add([FromBody] AddressDto addressDto)
         {
