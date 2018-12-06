@@ -19,7 +19,7 @@ Our api receives a new address and adds it to the database (there's no database 
         Office =20
     }
 ```
-**Again, you don't want to make your api consumers understand your enums. They should send and receive Home or Office instead of 10 or 20.**
+Again, you don't want to make your api consumers understand your enums. They should send and receive Home or Office instead of 10 or 20.
 
 #### Create a new dto with a custom validator
 
